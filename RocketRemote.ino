@@ -35,7 +35,10 @@ bool armed = true;
 long debounce = 0;
 bool success;
 float Max = 0;
+float currentMax = 0;
 float avg_thrust = 0;
+
+float thrust_curve = [];
 
 static lv_chart_series_t * ser1;
 static lv_coord_t ui_ThrustChart1_series_1_array[] = { };
@@ -132,10 +135,10 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
   if (currentMax != Max && standData.thrust != 0){
     lv_chart_set_next_value(ui_ThrustChart1, ser1, standData.thrust);
   }
-  for (val i=0; i < len(ser1); i++){
-    avg_thrust = avg_thrust + ser1[val];
+  for (int i=0; i < ser1.len(); i++){
+    avg_thrust = avg_thrust + ser1[i];
   }
-  avg_thrust = avg_thrust / len(ser1);
+  avg_thrust = avg_thrust / ser1.len();
 }
 
 
