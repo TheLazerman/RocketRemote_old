@@ -133,8 +133,9 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
     lv_chart_set_next_value(ui_ThrustChart1, ser1, standData.thrust);
   }
   for (val i=0; i < len(ser1); i++){
-    avg_thrust = avg_thrust + 
+    avg_thrust = avg_thrust + ser1[val];
   }
+  avg_thrust = avg_thrust / len(ser1);
 }
 
 
