@@ -37,8 +37,9 @@ bool success;
 float Max = 0;
 float currentMax = 0;
 float avg_thrust = 0;
+float totalImpulse = 0;
 
-float thrust_curve = [];
+std::list<float> thrust_curve = {};
 
 static lv_chart_series_t * ser1;
 static lv_coord_t ui_ThrustChart1_series_1_array[] = { };
@@ -48,10 +49,15 @@ static lv_coord_t ui_ThrustChart1_series_1_array[] = { };
 
 // Callback when data is sent
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+  // Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
   if (status != 0){
     success = false;
+    _ui_state_modify(ui_DisconnectAlert, _UI_MODIFY_STATE_REMOVE, LV_STATE_DISABLED);
+  } else {
+    success = true;
+    _ui_state_modify(ui_DisconnectAlert, _UI_MODIFY_STATE_ADD, LV_STATE_DISABLED);
   }
+
 }
 
 
@@ -83,7 +89,7 @@ void setup() {
 
   ser1 = lv_chart_add_series(ui_ThrustChart1, lv_color_hex(0x808080), LV_CHART_AXIS_PRIMARY_Y);
 
-  analogWrite(38,255);
+  analogWrite(38,255); // ?? What is this line doing? 
 
   pinMode(arm, INPUT_PULLUP);
   pinMode(FIRE, INPUT_PULLUP);
@@ -126,24 +132,30 @@ void OnDataRecv(const uint8_t *mac, const uint8_t *incomingData, int len) {
   lastMsg = millis();
   memcpy(&standData, incomingData, sizeof(standData));
   armed = standData.armed;
+  standData.thrust = GramsToNewtons(standData.thrust);
   currentMax = Max;
   if (standData.thrust > Max){
     Max = standData.thrust;
   }
   _ui_label_set_property(ui_MaxThrustValue, _UI_LABEL_PROPERTY_TEXT, String(Max).c_str());
   lv_chart_set_range(ui_ThrustChart1, LV_CHART_AXIS_PRIMARY_Y, 0, Max + 25 );
-  if (currentMax != Max && standData.thrust != 0){
+  if (currentMax != Max && standData.thrust <= 0){
     lv_chart_set_next_value(ui_ThrustChart1, ser1, standData.thrust);
   }
-  for (int i=0; i < ser1.len(); i++){
-    avg_thrust = avg_thrust + ser1[i];
-  }
-  avg_thrust = avg_thrust / ser1.len();
+  thrust_curve.push_back(standData.thrust);
+  avg_thrust = std::accumulate(thrust_curve.begin(), thrust_curve.end(), 0.0) / thrust_curve.size();
+  _ui_label_set_property(ui_AvgThrustValue, _UI_LABEL_PROPERTY_TEXT, String(avg_thrust).c_str);
+  totalImpulse = std::accumulate(thrust_curve.begin(), thrust_curve.end(), 0.0) * 0.1;
+  _ui_label_set_property(ui_ImpulseValue, _UI_LABEL_PROPERTY_TEXT, string(totalImpulse).c_str);
+}
+
+
+float GramsToNewtons(float: grams){
+  return (grams/1000)*9.81;
 }
 
 
 void loop() {
-  testStandCommands.fire = false;
   if (standData.armed){
     digitalWrite(redled, HIGH);
     digitalWrite(greenled, LOW);
