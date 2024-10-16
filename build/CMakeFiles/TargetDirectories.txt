@@ -1,0 +1,3 @@
+/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build/CMakeFiles/ui.dir
+/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build/CMakeFiles/edit_cache.dir
+/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build/CMakeFiles/rebuild_cache.dir

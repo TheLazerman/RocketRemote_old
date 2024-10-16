@@ -1,0 +1,2 @@
+/usr/bin/ar qc libui.a CMakeFiles/ui.dir/ui_Screen1.c.o CMakeFiles/ui.dir/ui_theme_manager.c.o CMakeFiles/ui.dir/ui_themes.c.o CMakeFiles/ui.dir/ui.c.o CMakeFiles/ui.dir/ui_comp_hook.c.o CMakeFiles/ui.dir/ui_helpers.c.o
+/usr/bin/ranlib libui.a

@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-gcc-14   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/ui.dir/ui_Screen1.c.o -c /Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_Screen1.c",
+  "file": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_Screen1.c",
+  "output": "CMakeFiles/ui.dir/ui_Screen1.c.o"
+},
+{
+  "directory": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-gcc-14   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/ui.dir/ui_theme_manager.c.o -c /Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_theme_manager.c",
+  "file": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_theme_manager.c",
+  "output": "CMakeFiles/ui.dir/ui_theme_manager.c.o"
+},
+{
+  "directory": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-gcc-14   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/ui.dir/ui_themes.c.o -c /Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_themes.c",
+  "file": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_themes.c",
+  "output": "CMakeFiles/ui.dir/ui_themes.c.o"
+},
+{
+  "directory": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-gcc-14   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/ui.dir/ui.c.o -c /Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui.c",
+  "file": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui.c",
+  "output": "CMakeFiles/ui.dir/ui.c.o"
+},
+{
+  "directory": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-gcc-14   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/ui.dir/ui_comp_hook.c.o -c /Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_comp_hook.c",
+  "file": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_comp_hook.c",
+  "output": "CMakeFiles/ui.dir/ui_comp_hook.c.o"
+},
+{
+  "directory": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin23-gcc-14   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/ui.dir/ui_helpers.c.o -c /Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_helpers.c",
+  "file": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/ui_helpers.c",
+  "output": "CMakeFiles/ui.dir/ui_helpers.c.o"
+}
+]
