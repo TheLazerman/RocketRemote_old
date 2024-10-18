@@ -28,38 +28,6 @@
       }
     ]
   },
-  "themes": [
-    {
-      "name": "Telemetry",
-      "properties": [
-        {
-          "nid": 557305248,
-          "flags": 2097152,
-          "strtype": "THEME_COLOR",
-          "strval": "Red",
-          "intarray": [
-            255,
-            0,
-            0,
-            255
-          ],
-          "InheritedType": 0
-        },
-        {
-          "nid": 253628404,
-          "flags": 2097152,
-          "strtype": "THEME_COLOR",
-          "strval": "Green",
-          "intarray": [
-            41,
-            223,
-            36,
-            255
-          ],
-          "InheritedType": 0
-        }
-      ]
-    }
-  ],
+  "themes": [],
   "selected_theme": "Default"
 }
