@@ -7980,7 +7980,7 @@
           {
             "nid": -933704278,
             "strtype": "_event/name",
-            "strval": "Event1",
+            "strval": "CheckConnection",
             "InheritedType": 10
           },
           {
@@ -7993,6 +7993,44 @@
             "nid": -2063398177,
             "strtype": "_event/condition_P",
             "strval": "",
+            "InheritedType": 10
+          },
+          {
+            "nid": 497728763,
+            "strtype": "_event/action",
+            "strval": "CALL FUNCTION",
+            "childs": [
+              {
+                "nid": -509414284,
+                "strtype": "CALL FUNCTION/Name",
+                "strval": "CALL FUNCTION",
+                "InheritedType": 10
+              },
+              {
+                "nid": -1768707424,
+                "strtype": "CALL FUNCTION/Call",
+                "strval": "<{Function_name}>( event_struct )",
+                "InheritedType": 10
+              },
+              {
+                "nid": -1804327778,
+                "strtype": "CALL FUNCTION/CallC",
+                "strval": "<{Function_name}>( e );",
+                "InheritedType": 10
+              },
+              {
+                "nid": -558198405,
+                "strtype": "CALL FUNCTION/Function_name",
+                "strval": "CheckConnctionStatus",
+                "InheritedType": 10
+              },
+              {
+                "nid": -637837093,
+                "strtype": "CALL FUNCTION/Dont_export_function",
+                "strval": "True",
+                "InheritedType": 2
+              }
+            ],
             "InheritedType": 10
           }
         ],
@@ -8028,7 +8066,7 @@
     "theme_color2": 0,
     "uiExportFolderPath": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote/UI",
     "projectExportFolderPath": "/Users/gcoones/Documents/Arduino/sketchbook/RocketRemote",
-    "backup_cnt": 226,
+    "backup_cnt": 227,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
